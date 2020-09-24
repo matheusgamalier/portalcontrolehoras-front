@@ -14,8 +14,8 @@ function carregarOcorrencia() {
         fetch("http://localhost:8080/Ocorrencia/" + localStorage.getItem("ocorrenciaId"))
         .then(res => res.json())
         .then(res => {
-            document.getElementById("atividadeData").innerHTML = "Data: " + res.data;
-            document.getElementById("atividadeHora").innerHTML = "Hora: " + res.hora;
+            document.getElementById("atividadeDataHora").innerHTML = "<span class='pl-4 pr-4'>Data: " + res.data + "</span> <span class='pl-5'>Hora: " + res.hora + "</span>";
+
             document.getElementById("atividadeDescricao").value = res.descricao;
             if (res.ponto_manual == 0) {
                 document.getElementById("atividadeAjusteManualNao").checked = true;
