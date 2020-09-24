@@ -1,4 +1,10 @@
 function carregarOcorrencia() {
+    var ocorrencia = localStorage.getItem("ocorrenciaId");
+    
+    if (ocorrencia == null) {
+        location = "index.html";
+    }
+    
     fetch("http://localhost:8080/Atividades/")
     .then(res => res.json())
     .then(res => {

@@ -1,4 +1,4 @@
-function carregarGestor() {
+function carregarColaborador() {
     var usuario = localStorage.getItem("userLogado");
     
     if (usuario == null) {
@@ -34,7 +34,7 @@ function tabelaOcorrencias(listaFiltro) {
                     "<th>Atividade</th>" + 
                     "<th>Descrição</th>" + 
                     "<th>Data</th>" + 
-                    "<th>Hora</th>" + 
+                    "<th>Hora Extra</th>" + 
                     "<th>Ponto Manual</th>" + 
                     "<th>Status</th>" +
                     "<th>Atualizar</th>" +
