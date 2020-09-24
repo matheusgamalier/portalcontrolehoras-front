@@ -49,10 +49,10 @@ function tabelaOcorrencias(listaFiltro) {
                         "<td>" + res[cont].id_usuario.nome_usuario + "</td>" + 
                         "<td>" + res[cont].id_atividade.nome_atividade + "</td>" + 
                         "<td>" + res[cont].descricao + "</td>" + 
-                        "<td>" + res[cont].data + "</td>" + 
-                        "<td>" + res[cont].hora + "</td>" + 
-                        "<td>" + ponto_manual + "</td>" + 
-                        "<td>" + status + "</td>" + 
+                        "<td>" + res[cont].data + "</td>" +
+                        "<td class='text-center'>" + res[cont].hora + "</td>" + 
+                        "<td class='text-center'>" + ponto_manual + "</td>" + 
+                        "<td class='text-center'>" + status + "</td>" + 
                         "<td class='text-center'><button onclick='abrirOcorrencia("+ res[cont].num_seq +")' class='btn btn-outline-secondary btn-sm'>Atualizar</button></td>" + 
                     "<tr>";
             }

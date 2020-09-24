@@ -5,18 +5,17 @@ function carregarGestor() {
         location = "index.html";
     } else {
         var usuarioJson = JSON.parse(usuario);
-        if (usuario.gestor != 1) {
+        if (usuarioJson.gestor != 1) {
             location = "colaborador.html";
         }
         else {
             document.getElementById("foto").innerHTML = 
-            "<img alt='foto do usuario' title='" + usuarioJson.nome_usuario + "' src='img/" + usuarioJson.foto + "'/>";
+            "<img class='img-fluid' alt='foto do usuario' title='" + usuarioJson.nome_usuario + "' src='img/" + usuarioJson.foto + "'/>";
 
             document.getElementById("dados").innerHTML = 
-            "<h3>" +
-                "Nome: " + usuarioJson.nome_usuario +
-                "<br>Email: " + usuarioJson.email_usuario + 
-            "</h3>";
+            "<h5 class='card-title'>" + usuarioJson.nome_usuario + "</h5>" + 
+            "<p class='card-text'>" + usuarioJson.email_usuario + "<br>" + usuarioJson.racf + "</p>" +
+            "<p class='card-text'><small class='text-muted'>Gestor</small></p>";
             
             tabelaOcorrencias();
         }
@@ -31,14 +30,14 @@ function tabelaOcorrencias(listaFiltro) {
         .then(res => res.json())
         .then(res => {
             var tabela = 
-            "<table class='table'>" +
-                "<tr>" + 
+            "<table class='table table-striped table-hover table-sm'>" +
+                "<tr class='bg-orange text-center text-white'>" + 
                     "<th>Id</th>" + 
                     "<th>Usuário</th>" +
                     "<th>Atividade</th>" + 
                     "<th>Descrição</th>" + 
                     "<th>Data</th>" + 
-                    "<th>Hora</th>" + 
+                    "<th>Hora Extra</th>" + 
                     "<th>Ponto Manual</th>" + 
                     "<th>Status</th>"
                 "</tr>"; 
@@ -53,10 +52,10 @@ function tabelaOcorrencias(listaFiltro) {
                         "<td>" + res[cont].id_usuario.nome_usuario + "</td>" + 
                         "<td>" + res[cont].id_atividade.nome_atividade + "</td>" + 
                         "<td>" + res[cont].descricao + "</td>" + 
-                        "<td>" + res[cont].data + "</td>" + 
-                        "<td>" + res[cont].hora + "</td>" + 
-                        "<td>" + ponto_manual + "</td>" + 
-                        "<td>" + status + "</td>" + 
+                        "<td class='text-center'>" + res[cont].data + "</td>" + 
+                        "<td class='text-center'>" + res[cont].hora + "</td>" + 
+                        "<td class='text-center'>" + ponto_manual + "</td>" + 
+                        "<td class='text-center'>" + status + "</td>" + 
                     "<tr>";
             }
         

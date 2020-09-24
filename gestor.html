@@ -5,43 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usuário</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body onload="carregarGestor()">
-    
+    <nav class="navbar navbar-light bg-orange">
+        <img class="img-fluid logo-itau" alt="Logo Itaú" title="Logo Itaú" src="img/itau-logo.png"/>
+        <strong><a class="align-right text-white" onclick="logout()" href="index.html">Logout</a></strong>
+    </nav>
     <div class="container">
     
-        <div class="row">
-            <div class="col-12 mb-2">
-                <h3 class="text-center text-uppercase">central do gestor</h3>
-                <a onclick="logout()" href="index.html">Logout</a>
+        <div class="row mb-2 mt-4">
+            <div class="col-12">
+                <div class="card mb-3" style="max-width: 100%;">
+                    <div class="row no-gutters">
+                        <div id="foto" class="col-md-1 d-flex flex-wrap align-items-center">
+                            <!-- Resultado do ajax -->
+                        </div>
+                        <div class="col-md-10">
+                            <div id="dados" class="card-body">
+                            <!-- Resultado do ajax -->
+                                
+                            </div>
+                        </div>
+                        <div class="col-1">
+                            <img class='img-fluid' alt='foto do usuario' title="" src="img/clock.gif"/>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-9"></div>
+            <div class="col-3">
+                <div class="input-group mb-3">
+                    <select class="custom-select" id="cmbOcorrencia" onchange="filtrarOcorrencias()">
+                        <option value="todas" selected>Todas</option>
+                        <option value="1">Justificada</option>
+                        <option value="0">Pendente</option>              
+                    </select>
+                </div>
             </div>
         </div>
 
         <div class="row">
-            <div id="foto" class="col-12 mb-2">
-                <!-- Resultado do ajax -->
-            </div>
-        </div>
-
-        <div class="row">
-            <div id="dados" class="col-12 mb-2">
-                <!-- Resultado do ajax -->
-            </div>
-        </div>
-
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <label class="input-group-text" for="cmbOcorrencia">Filtro</label>
-            </div>
-            <select class="custom-select" id="cmbOcorrencia" onchange="filtrarOcorrencias()">
-              <option value="todas" selected>Todas</option>
-              <option value="1">Justificada</option>
-              <option value="0">Pendente</option>              
-            </select>
-        </div>
-
-        <div class="row">
-            <h3>Ocorrências</h3>
             <div id="ocorrencias" class="col-12 mb-2">
                 <!-- Resultado do ajax -->
             </div>
