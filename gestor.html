@@ -12,7 +12,8 @@
     
         <div class="row">
             <div class="col-12 mb-2">
-                <h3 class="text-center text-uppercase">central do usuário</h3>
+                <h3 class="text-center text-uppercase">central do gestor</h3>
+                <a href="index.html">Logout</a>
             </div>
         </div>
 
@@ -30,22 +31,17 @@
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <label class="input-group-text" for="cmbLancamento">Lançamentos</label>
+              <label class="input-group-text" for="cmbOcorrencia">Filtro</label>
             </div>
-            <select class="custom-select" id="cmbLancamento" onchange="filtrarLancamento()">
-              <option selected>Selecione</option>
-              <option value="1">Sim</option>
-              <option value="0">Não</option>              
+            <select class="custom-select" id="cmbOcorrencia" onchange="filtrarOcorrencias()">
+              <option value="todas" selected>Todas</option>
+              <option value="1">Justificada</option>
+              <option value="0">Pendente</option>              
             </select>
         </div>
 
         <div class="row">
-            <div class="col-12 mb-2">
-                <button onclick="location='artista.html'" type="button" class="btn btn-primary">Artista</button>
-            </div>
-        </div>
-
-        <div class="row">
+            <h3>Ocorrências</h3>
             <div id="ocorrencias" class="col-12 mb-2">
                 <!-- Resultado do ajax -->
             </div>

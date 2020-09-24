@@ -19,13 +19,12 @@ function carregarGestor() {
 
 }
 
-function tabelaOcorrencias() {
-    var rota = "http://localhost:8080/Ocorrencias"
-    
+function tabelaOcorrencias(listaFiltro) {
+    var rota = listaFiltro == undefined || listaFiltro == "todas" ? "http://localhost:8080/Ocorrencias" : "http://localhost:8080/ListaOcorrenciasStatus/" + listaFiltro;
+
     fetch(rota)
         .then(res => res.json())
         .then(res => {
-            console.log(res);
             var tabela = 
             "<table class='table'>" +
                 "<tr>" + 
@@ -40,6 +39,9 @@ function tabelaOcorrencias() {
                 "</tr>"; 
             
             for(cont = 0; cont < res.length; cont++) {
+                var ponto_manual = res[cont].ponto_manual == 0 ? "Não" : "Sim";
+                var status = res[cont].status == 0 ? "Pendente" : "Justificada";
+                
                 tabela += 
                     "<tr>" + 
                         "<td>" + res[cont].num_seq + "</td>" + 
@@ -48,8 +50,8 @@ function tabelaOcorrencias() {
                         "<td>" + res[cont].descricao + "</td>" + 
                         "<td>" + res[cont].data + "</td>" + 
                         "<td>" + res[cont].hora + "</td>" + 
-                        "<td>" + res[cont].ponto_manual + "</td>" + 
-                        "<td>" + res[cont].status + "</td>" + 
+                        "<td>" + ponto_manual + "</td>" + 
+                        "<td>" + status + "</td>" + 
                     "<tr>";
             }
         
@@ -63,15 +65,6 @@ function tabelaOcorrencias() {
     
 }
 
-/*function filtrarOcorrencia() {
-    var valor = document.getElementById("cmbLancamento").value;
-    var rota = "http://localhost:8080/Ocorrencias/"
-    
-    fetch(rota)
-        .then(res => res.json())
-        .then(res => tabelaFiltroLancamento(res))
-        .catch(err => {
-            alert("Não encontrado")
-    });
-
-}*/
+function filtrarOcorrencias() {
+    tabelaOcorrencias(document.getElementById("cmbOcorrencia").value);
+}
