@@ -5,31 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <nav class="navbar navbar-light bg-orange">
+        <img class="img-fluid logo-itau" alt="Logo Itaú" title="Logo Itaú" src="img/itau-logo.png"/>
+    </nav>
     <div class="container">
         <div class="row">
-            <div class="col-12">
-
-                <h3>Login</h3>
+            <div class="col-4"></div>
             
-                <div class="input-group flex-nowrap mb-3">
-                    <div class="input-group-prepend">
-                    <span class="input-group-text" id="addon-wrapping">Racf</span>
-                    </div>
-                    <input id="txtRacf" type="text" class="form-control" placeholder="Digite seu racf" aria-label="Username" aria-describedby="addon-wrapping" required>
-                </div>
+            <div class="col-4 text-center mt-5">
 
-                <div class="input-group flex-nowrap mb-3">
-                    <div class="input-group-prepend">
-                    <span class="input-group-text" id="addon-wrapping">Senha</span>
+                <div class="card bg-light pl-2 pr-2 pb-3">
+                    <div class="card-body">
+                        <h2>Bem-vindo(a)</h2>
+                        <h3>Faça o login</h3>
                     </div>
-                    <input id="txtSenha" type="password" class="form-control" placeholder="Digite sua senha" aria-label="Username" aria-describedby="addon-wrapping" required>
-                </div>
 
-                <button onclick="logar()" type="button" class="btn btn-primary">Login</button>
+                    <div class="input-group flex-nowrap mb-3 mt-3">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text" id="addon-wrapping">Racf &nbsp;&nbsp;</span>
+                        </div>
+                        <input id="txtRacf" type="text" class="form-control" placeholder="Digite sua racf" aria-label="Username" aria-describedby="addon-wrapping" required>
+                    </div>
+    
+                    <div class="input-group flex-nowrap mb-3">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text" id="addon-wrapping">Senha</span>
+                        </div>
+                        <input id="txtSenha" type="password" class="form-control" placeholder="Digite sua senha" aria-label="Username" aria-describedby="addon-wrapping" required>
+                    </div>
+    
+                    <button onclick="logar()" type="button" class="btn btn-outline-primary">Entrar</button>
+
+                  </div>
+                
+            
+
+
 
             </div>
+
+            <div class="col-4"></div>
         </div>
     </div>
 

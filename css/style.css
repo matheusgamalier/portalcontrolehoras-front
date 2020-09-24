@@ -1,0 +1,17 @@
+.btn-outline-primary, .btn-outline-primary:hover, .btn-outline-primary:active, .btn-outline-primary:visited {
+    background-color: #F47920 !important;
+    color: #FFFFFF !important;
+    border-color: #FFFFFF;
+}   
+
+.btn-outline-primary:hover {
+    border-color: #007bff;
+}
+
+.bg-orange {
+    background-color: #F47920!important;
+}
+
+.logo-itau {
+    max-width: 5%;
+}
