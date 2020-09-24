@@ -4,30 +4,29 @@ function carregarOcorrencia() {
     if (ocorrencia == null) {
         location = "index.html";
     }
-    
-    fetch("http://localhost:8080/Atividades/")
-    .then(res => res.json())
-    .then(res => {
-        console.log(res);
-        montarCombo(res)
-    });
+    else {
+        fetch("http://localhost:8080/Atividades/")
+        .then(res => res.json())
+        .then(res => {
+            montarCombo(res)
+        });
 
-    fetch("http://localhost:8080/Ocorrencia/" + localStorage.getItem("ocorrenciaId"))
-    .then(res => res.json())
-    .then(res => {
-        console.log(res);
-        document.getElementById("atividadeData").innerHTML = "Data: " + res.data;
-        document.getElementById("atividadeHora").innerHTML = "Hora: " + res.hora;
-        document.getElementById("atividadeDescricao").value = res.descricao;
-        if (res.ponto_manual == 0) {
-            document.getElementById("atividadeAjusteManualNao").checked = true;
-        }
-        else {
-            document.getElementById("atividadeAjusteManualSim").checked = true;
-        }
-        document.getElementById("cmbAtividades").value = res.id_atividade.id_atividade;
+        fetch("http://localhost:8080/Ocorrencia/" + localStorage.getItem("ocorrenciaId"))
+        .then(res => res.json())
+        .then(res => {
+            document.getElementById("atividadeData").innerHTML = "Data: " + res.data;
+            document.getElementById("atividadeHora").innerHTML = "Hora: " + res.hora;
+            document.getElementById("atividadeDescricao").value = res.descricao;
+            if (res.ponto_manual == 0) {
+                document.getElementById("atividadeAjusteManualNao").checked = true;
+            }
+            else {
+                document.getElementById("atividadeAjusteManualSim").checked = true;
+            }
+            document.getElementById("cmbAtividades").value = res.id_atividade.id_atividade;
 
-    });
+        });
+    }
 
 }
 
@@ -78,8 +77,4 @@ function atualizarOcorrencia() {
             });
     })
 
-
-function teste() {
-    alert('oi');
-}
 }

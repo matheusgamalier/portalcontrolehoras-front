@@ -5,16 +5,21 @@ function carregarGestor() {
         location = "index.html";
     } else {
         var usuarioJson = JSON.parse(usuario);
-        document.getElementById("foto").innerHTML = 
-        "<img alt='foto do usuario' title='" + usuarioJson.nome_usuario + "' src='img/" + usuarioJson.foto + "'/>";
+        if (usuario.gestor != 1) {
+            location = "colaborador.html";
+        }
+        else {
+            document.getElementById("foto").innerHTML = 
+            "<img alt='foto do usuario' title='" + usuarioJson.nome_usuario + "' src='img/" + usuarioJson.foto + "'/>";
 
-        document.getElementById("dados").innerHTML = 
-        "<h3>" +
-            "Nome: " + usuarioJson.nome_usuario +
-            "<br>Email: " + usuarioJson.email_usuario + 
-        "</h3>";
-        
-        tabelaOcorrencias();
+            document.getElementById("dados").innerHTML = 
+            "<h3>" +
+                "Nome: " + usuarioJson.nome_usuario +
+                "<br>Email: " + usuarioJson.email_usuario + 
+            "</h3>";
+            
+            tabelaOcorrencias();
+        }
     }
 
 }
