@@ -16,7 +16,7 @@
     
         <div class="row mb-2 mt-4">
             <div class="col-12">
-                <div class="card mb-3" style="max-width: 100%;">
+                <div class="card mb-3">
                     <div class="row no-gutters">
                         <div id="foto" class="col-md-1 d-flex flex-wrap align-items-center">
                             <!-- Resultado do ajax -->
@@ -28,7 +28,7 @@
                             </div>
                         </div>
                         <div class="col-1">
-                            <img class='img-fluid' alt='foto do usuario' title="" src="img/clock.gif"/>
+                            <img class='d-none d-md-block img-fluid' alt='clock' title="clock" src="img/clock.gif"/>
                         </div>
                     </div>
                 </div>
@@ -37,8 +37,7 @@
         </div>
 
         <div class="row mt-3">
-            <div class="col-9"></div>
-            <div class="col-3">
+            <div class="offset-md-9 col-md-3">
                 <div class="input-group mb-3">
                     <select class="custom-select" id="cmbOcorrencia" onchange="filtrarOcorrencias()">
                         <option value="todas" selected>Todas</option>
@@ -50,7 +49,7 @@
         </div>
 
         <div class="row">
-            <div id="ocorrencias" class="col-12 mb-2">
+            <div id="ocorrencias" class="col-12 mb-2 table-responsive">
                 <!-- Resultado do ajax -->
             </div>
         </div>

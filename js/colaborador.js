@@ -6,7 +6,7 @@ function carregarColaborador() {
     } else {
         var usuarioJson = JSON.parse(usuario);
         document.getElementById("foto").innerHTML = 
-        "<img class='img-fluid' alt='foto do usuario' title='" + usuarioJson.nome_usuario + "' src='img/" + usuarioJson.foto + "'/>";
+        "<img class='img-fluid rounded-circle' alt='foto do usuario' title='" + usuarioJson.nome_usuario + "' src='img/" + usuarioJson.foto + "'/>";
 
         document.getElementById("dados").innerHTML = 
         "<h5 class='card-title'>" + usuarioJson.nome_usuario + "</h5>" + 
