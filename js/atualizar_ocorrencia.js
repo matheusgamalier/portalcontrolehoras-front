@@ -16,7 +16,7 @@ function carregarOcorrencia() {
         .then(res => {
             var pattern = /(\d{4})\-(\d{2})\-(\d{2})/;
             var data = res.data.replace(pattern,'$3/$2/$1');
-            document.getElementById("atividadeDataHora").innerHTML = "<span class='pl-4 pr-4'>Data: " + data + "</span> <span class='pl-5'>Hora: " + res.hora + "</span>";
+            document.getElementById("atividadeDataHora").innerHTML = "<span style='margin-right: 10%'>Data: " + data + "</span> <span style='margin-left: 10%'>Hora: " + res.hora + "</span>";
 
             document.getElementById("atividadeDescricao").value = res.descricao;
             if (res.ponto_manual == 0) {
