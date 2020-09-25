@@ -45,14 +45,16 @@ function tabelaOcorrencias(listaFiltro) {
             for(cont = 0; cont < res.length; cont++) {
                 var ponto_manual = res[cont].ponto_manual == 0 ? "Não" : "Sim";
                 var status = res[cont].status == 0 ? "Pendente" : "Justificada";
-                
+                var descricao = res[cont].descricao == null ? "" : res[cont].descricao;
+                var pattern = /(\d{4})\-(\d{2})\-(\d{2})/;
+                var data = res[cont].data.replace(pattern,'$3/$2/$1');
                 tabela += 
                     "<tr>" + 
                         "<td>" + res[cont].num_seq + "</td>" + 
                         "<td>" + res[cont].id_usuario.nome_usuario + "</td>" + 
                         "<td>" + res[cont].id_atividade.nome_atividade + "</td>" + 
-                        "<td>" + res[cont].descricao + "</td>" + 
-                        "<td class='text-center'>" + res[cont].data + "</td>" + 
+                        "<td>" + descricao + "</td>" + 
+                        "<td class='text-center'>" + data + "</td>" + 
                         "<td class='text-center'>" + res[cont].hora + "</td>" + 
                         "<td class='text-center'>" + ponto_manual + "</td>" + 
                         "<td class='text-center'>" + status + "</td>" + 

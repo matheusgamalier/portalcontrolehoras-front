@@ -14,7 +14,9 @@ function carregarOcorrencia() {
         fetch("http://localhost:8080/Ocorrencia/" + localStorage.getItem("ocorrenciaId"))
         .then(res => res.json())
         .then(res => {
-            document.getElementById("atividadeDataHora").innerHTML = "<span class='pl-4 pr-4'>Data: " + res.data + "</span> <span class='pl-5'>Hora: " + res.hora + "</span>";
+            var pattern = /(\d{4})\-(\d{2})\-(\d{2})/;
+            var data = res.data.replace(pattern,'$3/$2/$1');
+            document.getElementById("atividadeDataHora").innerHTML = "<span class='pl-4 pr-4'>Data: " + data + "</span> <span class='pl-5'>Hora: " + res.hora + "</span>";
 
             document.getElementById("atividadeDescricao").value = res.descricao;
             if (res.ponto_manual == 0) {
