@@ -41,7 +41,8 @@ function montarCombo(lista) {
     document.getElementById("cmbAtividades").innerHTML = combo;
 }
 
-function atualizarOcorrencia() {
+function atualizarOcorrencia(e) {
+    e.preventDefault();
     fetch("http://localhost:8080/Ocorrencia/" + localStorage.getItem("ocorrenciaId"))
     .then(res => res.json())
     .then(res => {

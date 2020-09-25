@@ -1,4 +1,5 @@
-function logar() {
+function logar(e) {
+    e.preventDefault();
     var form = {
         racf: document.getElementById("txtRacf").value,
         senha: document.getElementById("txtSenha").value,
